@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarcadorX | Resultados en Vivo y Noticias Deportivas</title>
+  <!-- Tipografía moderna de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Enlace a nuestra hoja de estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Barra de navegación superior -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="logo">Marcador<span>X</span></a>
+      
+      <nav class="sport-nav" aria-label="Deportes">
+        <button class="nav-btn active">⚽ Fútbol</button>
+        <button class="nav-btn disabled" title="Próximamente">🏀 Baloncesto <span class="badge-soon">Pronto</span></button>
+        <button class="nav-btn disabled" title="Próximamente">🎾 Tenis <span class="badge-soon">Pronto</span></button>
+        <button class="nav-btn disabled" title="Próximamente">🏎️ Motor <span class="badge-soon">Pronto</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="container main-layout">
+    
+    <!-- SECCIÓN IZQUIERDA: RESULTADOS -->
+    <section class="scores-section" aria-labelledby="titulo-resultados">
+      <div class="section-header">
+        <h1 id="titulo-resultados">Resultados de Fútbol</h1>
+        <div class="filter-pills">
+          <button class="pill active">Todos</button>
+          <button class="pill">En vivo</button>
+          <button class="pill">Finalizados</button>
+        </div>
+      </div>
+
+      <!-- Competición 1: LaLiga -->
+      <div class="league-group">
+        <div class="league-header">
+          <span class="league-flag">🇪🇸</span>
+          <h2>LaLiga EA Sports</h2>
+        </div>
+
+        <!-- Partido en vivo -->
+        <article class="match-card live">
+          <div class="match-status">
+            <span class="live-dot"></span>
+            <span class="time">68'</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <span class="team-name">Real Madrid</span>
+              <span class="team-score">2</span>
+            </div>
+            <div class="team">
+              <span class="team-name">FC Barcelona</span>
+              <span class="team-score">1</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Partido próximo -->
+        <article class="match-card">
+          <div class="match-status">
+            <span class="time upcoming">21:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <span class="team-name">Atlético de Madrid</span>
+              <span class="team-score">-</span>
+            </div>
+            <div class="team">
+              <span class="team-name">Athletic Club</span>
+              <span class="team-score">-</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Competición 2: Champions League -->
+      <div class="league-group">
+        <div class="league-header">
+          <span class="league-flag">🇪🇺</span>
+          <h2>UEFA Champions League</h2>
+        </div>
+
+        <!-- Partido finalizado -->
+        <article class="match-card finished">
+          <div class="match-status">
+            <span class="time">FIN</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <span class="team-name">Manchester City</span>
+              <span class="team-score winner">3</span>
+            </div>
+            <div class="team">
+              <span class="team-name">Bayern Múnich</span>
+              <span class="team-score">1</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DERECHA: NOTICIAS -->
+    <aside class="news-section" aria-labelledby="titulo-noticias">
+      <div class="section-header">
+        <h2 id="titulo-noticias">Últimas Noticias</h2>
+      </div>
+
+      <div class="news-list">
+        <article class="news-card">
+          <span class="news-tag">LaLiga</span>
+          <h3><a href="#">El Clásico mantiene la emoción al rojo vivo en la segunda mitad</a></h3>
+          <p class="news-excerpt">Ambos equipos buscan el control del mediocampo en un duelo de máxima intensidad.</p>
+          <span class="news-meta">Hace 12 min</span>
+        </article>
+
+        <article class="news-card">
+          <span class="news-tag">Champions</span>
+          <h3><a href="#">Noche mágica en Europa: los favoritos no fallan en casa</a></h3>
+          <p class="news-excerpt">Repaso a los mejores goles y estadísticas clave de la jornada continental.</p>
+          <span class="news-meta">Hace 1 hora</span>
+        </article>
+
+        <article class="news-card">
+          <span class="news-tag">Mercado</span>
+          <h3><a href="#">Las jóvenes promesas que dominarán el fútbol europeo esta temporada</a></h3>
+          <p class="news-excerpt">Analizamos el impacto de los nuevos talentos en las cinco grandes ligas.</p>
+          <span class="news-meta">Hace 3 horas</span>
+        </article>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="container">
+      <p>MarcadorX &copy; 2026 — Plataforma deportiva multi-deporte. Proyecto de Portfolio.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
