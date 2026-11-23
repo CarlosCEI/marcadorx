@@ -1,0 +1,345 @@
+/* Variables de color y tipografía (Fácil de mantener y escalar) */
+:root {
+  --bg-main: #0b0f19;
+  --bg-card: #131a2a;
+  --bg-card-hover: #1a2338;
+  --bg-nav: rgba(11, 15, 25, 0.85);
+  --border-color: #232d45;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --accent-primary: #10b981; /* Verde deportivo vibrante */
+  --accent-glow: rgba(16, 185, 129, 0.2);
+  --live-red: #ef4444;
+  
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-pill: 999px;
+}
+
+/* Reset básico y accesibilidad */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Barra de Navegación */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-nav);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--accent-primary);
+}
+
+.sport-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-btn.active {
+  background-color: var(--accent-glow);
+  color: var(--accent-primary);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.nav-btn.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.badge-soon {
+  font-size: 0.7rem;
+  background-color: #1e293b;
+  color: var(--text-secondary);
+  padding: 2px 6px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+/* Layout Principal (2 Columnas en escritorio, 1 en móvil) */
+.main-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  padding-top: 32px;
+  padding-bottom: 60px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.section-header h1,
+.section-header h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+/* Filtros de partidos */
+.filter-pills {
+  display: flex;
+  gap: 8px;
+}
+
+.pill {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pill:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.pill.active {
+  background-color: var(--text-primary);
+  color: var(--bg-main);
+  border-color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Grupos de Ligas y Tarjetas de Partidos */
+.league-group {
+  margin-bottom: 28px;
+}
+
+.league-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+
+.league-header h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.match-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.match-card:hover {
+  background-color: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.match-card.live {
+  border-left: 4px solid var(--live-red);
+}
+
+.match-status {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-right: 1px solid var(--border-color);
+  margin-right: 18px;
+}
+
+.match-card.live .match-status {
+  color: var(--live-red);
+}
+
+.match-status .upcoming {
+  color: var(--accent-primary);
+}
+
+/* Animación del punto EN VIVO */
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--live-red);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.match-teams {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.team-score {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+}
+
+.match-card.live .team-score,
+.team-score.winner {
+  color: var(--text-primary);
+}
+
+/* Sección de Noticias */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+}
+
+.news-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  background-color: var(--accent-glow);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.news-card h3 {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.news-card h3 a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.news-card h3 a:hover {
+  color: var(--accent-primary);
+}
+
+.news-excerpt {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.news-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding: 24px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Adaptación a Móviles y Tablets (Responsive) */
+@media (max-width: 860px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+}
